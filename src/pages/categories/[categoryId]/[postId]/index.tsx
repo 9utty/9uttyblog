@@ -10,6 +10,7 @@ import Spacer from "@/components/post/Spacer";
 import TabTag from "@/components/post/TabTag";
 import Utterances from "@/components/common/utterances";
 import TextTag from "@/components/post/TextTag";
+import Image from "next/image";
 import NotFound from "@/pages/404";
 
 type Props = {
@@ -76,9 +77,11 @@ const Post = ({ meta, compiledSource }: Props) => {
               alignItems: "end",
             }}
           >
-            <img
+            <Image
               src="https://user-images.githubusercontent.com/86397600/236613570-1475d4e4-44b7-4c02-88a3-160e4db52d99.png"
-              width={"30px"}
+              width={30}
+              height={30}
+              alt="postButton"
             />
             <TextTag>{" Tag: "}</TextTag>
             {meta.tags.map((tag) => (

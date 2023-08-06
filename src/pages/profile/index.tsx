@@ -3,9 +3,9 @@ import Div from "@/components/post/Div";
 import H2 from "@/components/post/H2";
 import TabTag from "@/components/post/TabTag";
 import { Row } from "antd";
+import Image from "next/image";
 import React from "react";
 import { ScrollView } from "react95";
-
 /** 내 프로필 페이지 */
 export default function Profile() {
   return (
@@ -30,11 +30,13 @@ export default function Profile() {
 건강하게 배워서 대체불가한 부품으로 자리매김하여, "이.건.학"이라는 이름이 곧 브랜드가 되는 것이 제 목표입니다.`}
               </TabTag>
             </div>
-            <img
+            <Image
               src={
                 "https://user-images.githubusercontent.com/86397600/237113449-6b8571b7-84eb-4463-88d0-10142af45e7a.jpeg"
               }
-              width={"200px"}
+              alt="profileImage"
+              width={200}
+              height={200}
               style={{ borderRadius: "50%" }}
             />
           </div>

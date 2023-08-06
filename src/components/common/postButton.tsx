@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -46,9 +45,11 @@ const PostButton = (props: Props) => {
           top: "-40px",
         }}
       >
-        <img
+        <Image
           src="https://user-images.githubusercontent.com/86397600/236504963-ae3b7e09-7aba-476b-b51b-df402aa5567e.png"
-          width="30px"
+          width={30}
+          height={30}
+          alt="postButton"
         />
         <span
           style={{

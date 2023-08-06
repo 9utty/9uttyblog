@@ -98,7 +98,6 @@ export async function getPostsMeta(): Promise<Meta[] | undefined> {
       },
     }
   );
-  console.log(res);
   if (!res.ok) return undefined;
 
   const repoFiletree: Filetree = await res.json();
@@ -122,7 +121,7 @@ export async function getPostsMeta(): Promise<Meta[] | undefined> {
 
 export async function getCategories() {
   const posts = await getPostsMeta();
-  console.log(posts);
+
   if (!posts) return undefined;
   const categoriesSet = new Set(posts.map((post) => post.id.split("/")[0]));
   return Array.from(categoriesSet);
