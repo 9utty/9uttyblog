@@ -43,13 +43,23 @@ const CustomModal = ({
       >
         <WindowHeader
           className="window-title"
-          style={{ justifyContent: "space-between", display: "flex" }}
+          style={{
+            justifyContent: "space-between",
+            display: "flex",
+            padding: "10px",
+            height: "35px",
+          }}
         >
-          <span style={{ fontFamily: "dunggeunmo-bold", fontSize: "22px" }}>
+          <span
+            style={{
+              fontFamily: "dunggeunmo-bold",
+              fontSize: "26px",
+            }}
+          >
             {`${modalName}`}
           </span>
-          <Button style={{ marginTop: "3px" }} onClick={closeModal}>
-            <span style={{ fontFamily: "dunggeunmo-bold", fontSize: "20px" }}>
+          <Button style={{ marginTop: "2px" }} onClick={closeModal}>
+            <span style={{ fontFamily: "dunggeunmo-bold", fontSize: "24px" }}>
               X
             </span>
           </Button>

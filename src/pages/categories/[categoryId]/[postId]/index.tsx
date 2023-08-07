@@ -69,7 +69,17 @@ const Post = ({ meta, compiledSource }: Props) => {
           style={{ width: "100%", height: "60vh", overflowY: "scroll" }}
         >
           <span style={{ fontSize: "2rem" }}>{meta.title}</span>
-          <div style={{ fontSize: "1rem" }}>{meta.date}</div>
+          <div
+            style={{
+              fontSize: "1rem",
+              color: "#424242",
+              display: "flex",
+              width: "100%",
+              justifyContent: "end",
+            }}
+          >
+            {meta.date}
+          </div>
           <div
             style={{
               flexDirection: "row",

@@ -52,19 +52,20 @@ h1 {
   font-size: 1.8rem;
   margin: 0;
   padding: 0;
+  @apply mt-10 mb-10;
 }
 
 li {
   font-family: "dunggeunmo-bold";
   font-size: 1.1rem;
-  @apply m-5;
+  @apply m-6;
 }
 
 ul li {
   font-family: "dunggeunmo-bold";
   font-size: 1.1rem;
   list-style: square;
-  @apply m-5;
+  @apply m-6;
 }
 
 h2 {
@@ -72,6 +73,7 @@ h2 {
   font-size: 1.6rem;
   margin: 0;
   padding: 0;
+  @apply mt-10 mb-10;
 }
 
 h3 {
@@ -79,4 +81,5 @@ h3 {
   font-size: 1.4rem;
   margin: 0;
   padding: 0;
+  @apply mt-10 mb-10;
 }
