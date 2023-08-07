@@ -6,7 +6,7 @@ interface props {
   categories: string[];
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const categories = await getCategories();
 
   if (categories === undefined) {
