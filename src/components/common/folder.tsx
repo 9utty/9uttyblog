@@ -28,8 +28,9 @@ const Folder = ({ FolderName }: Props) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       style={{
-        transform: isHovered ? "scale(1.02)" : "",
+        transform: isHovered ? "scale(1.1)" : "",
         transition: "transform 0.3s",
+        width: "100px",
       }}
     >
       <button

@@ -11,12 +11,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { getCategories } from "@/utils/posts";
 import Folder from "../common/folder";
+import { useRouter } from "next/router";
 interface Props {
   children?: React.ReactNode;
 }
 
 export default function Layout({ children }: Props) {
   const [open, setOpen] = useState(false);
+  const route = useRouter();
   return (
     <>
       <Bar
@@ -67,33 +69,31 @@ export default function Layout({ children }: Props) {
                 }}
                 onClick={() => setOpen(false)}
               >
-                <MenuListItem>
-                  <Link href="/myBlog">
-                    <span role="img" aria-label="👨">
-                      {" 👨 MyBlog? "}
-                    </span>
-                  </Link>
+                <MenuListItem onClick={() => route.push("/")}>
+                  <span role="img" aria-label="👨">
+                    {" 👨 "}
+                  </span>
+                  <span>My Blog?</span>
                 </MenuListItem>
-                <MenuListItem>
-                  <Link href="/profile">
-                    <span role="img" aria-label="👨‍💻">
-                      {" 👨‍💻 Profile? "}
-                    </span>
-                  </Link>
+                <MenuListItem onClick={() => route.push("/profile")}>
+                  <span role="img" aria-label="👨‍💻">
+                    {" 👨‍💻 "}
+                  </span>
+                  <span>Profile?</span>
                 </MenuListItem>
-                <MenuListItem>
-                  <Link href={"/"}>
-                    <span role="img" aria-label="🏠">
-                      {" 🏠 GoHome?"}
-                    </span>
-                  </Link>
+                <MenuListItem onClick={() => route.push("/")}>
+                  <span role="img" aria-label="🏠">
+                    {" 🏠 "}
+                  </span>
+                  <span>Go Home</span>
                 </MenuListItem>
-                <MenuListItem>
-                  <Link href="">
-                    <span role="img" aria-label="📁">
-                      {" 📁 GitHub? "}
-                    </span>
-                  </Link>
+                <MenuListItem
+                  onClick={() => route.push("https://github.com/9utty")}
+                >
+                  <span role="img" aria-label="📁">
+                    {" 📁 "}
+                  </span>
+                  <span>{" Github?"}</span>
                 </MenuListItem>
                 <Separator />
                 <MenuListItem disabled>

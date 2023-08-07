@@ -22,7 +22,15 @@ export const getServerSideProps = async () => {
 export default function Home({ categories }: props) {
   return (
     <div>
-      <div style={{ padding: "20px", color: "white" }}>
+      <div
+        style={{
+          padding: "20px",
+          color: "white",
+          display: "flex",
+          flexDirection: "column",
+          flexWrap: "wrap",
+        }}
+      >
         {categories &&
           categories.map((cate) => <Folder key={cate} FolderName={cate} />)}
       </div>
