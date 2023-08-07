@@ -55,6 +55,13 @@ h1 {
   @apply mt-14 mb-14;
 }
 
+ol {
+  font-family: "dunggeunmo-bold";
+  font-size: 1.1rem;
+  list-style: decimal;
+  @apply m-6;
+}
+
 li {
   font-family: "dunggeunmo-bold";
   font-size: 1.1rem;
