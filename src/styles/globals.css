@@ -52,7 +52,7 @@ h1 {
   font-size: 1.8rem;
   margin: 0;
   padding: 0;
-  @apply mt-10 mb-10;
+  @apply mt-14 mb-14;
 }
 
 li {
@@ -73,7 +73,7 @@ h2 {
   font-size: 1.6rem;
   margin: 0;
   padding: 0;
-  @apply mt-10 mb-10;
+  @apply mt-14 mb-14;
 }
 
 h3 {
@@ -81,5 +81,5 @@ h3 {
   font-size: 1.4rem;
   margin: 0;
   padding: 0;
-  @apply mt-10 mb-10;
+  @apply mb-14 mt-14;
 }
