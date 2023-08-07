@@ -47,14 +47,6 @@ body {
   overflow-y: hidden;
 }
 
-h1 {
-  font-family: "dunggeunmo-bold";
-  font-size: 1.8rem;
-  margin: 0;
-  padding: 0;
-  @apply mt-14 mb-10;
-}
-
 ol {
   font-family: "dunggeunmo-bold";
   font-size: 1.1rem;
@@ -62,31 +54,47 @@ ol {
   @apply m-6;
 }
 
+hr {
+  @apply my-10 px-8;
+}
+
 li {
   font-family: "dunggeunmo-bold";
-  font-size: 1.1rem;
-  @apply m-6;
+  font-size: 1rem;
+  @apply m-6 mt-6 mb-3;
 }
 
 ul li {
   font-family: "dunggeunmo-bold";
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   list-style: square;
-  @apply m-6;
+  @apply m-6 mt-6 mb-3;
+}
+
+pre code {
+  @apply rounded-lg;
+}
+
+h1 {
+  font-family: "dunggeunmo-bold";
+  font-size: 2.1rem;
+  margin: 0;
+  padding: 0;
+  @apply mt-20 mb-10;
 }
 
 h2 {
   font-family: "dunggeunmo-bold";
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   margin: 0;
   padding: 0;
-  @apply mt-14 mb-10;
+  @apply mt-20 mb-8;
 }
 
 h3 {
   font-family: "dunggeunmo-bold";
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin: 0;
   padding: 0;
-  @apply mb-14 mt-10;
+  @apply mb-20 mt-8;
 }
