@@ -36,8 +36,20 @@ const Folder = ({ FolderName }: Props) => {
         className="bg-transparent border-0 pt-[10px] w-20"
         onClick={onClickFolder}
       >
-        <div className="flex flex-col items-center">
-          <div className="w-[50px] inline-block align-middle">
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100px",
+            marginTop: "10px",
+            marginLeft: "10px",
+          }}
+        >
+          <div
+            style={{ width: "50px", inlineSize: "block", alignItems: "middle" }}
+          >
             <Image
               src="https://user-images.githubusercontent.com/86397600/236442704-86adb1a0-63f3-460a-a138-fcf18906222b.png"
               alt="folder"
