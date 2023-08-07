@@ -83,10 +83,10 @@ const Post = ({ meta, compiledSource }: Props) => {
               height={30}
               alt="postButton"
             />
-            <TextTag>{" Tag: "}</TextTag>
+            <TextTag>{`Tag: `}</TextTag>
             {meta.tags.map((tag) => (
               <TextTag key={tag}>
-                <a>{` "${tag}" `}</a>
+                <a>{`[${tag}]`}</a>
               </TextTag>
             ))}
           </div>

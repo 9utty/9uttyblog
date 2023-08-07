@@ -11,6 +11,8 @@ const TextTag = ({ children }: Props) => {
         fontSize: "1.3rem",
         fontFamily: "dunggeunmo",
         marginTop: "30px",
+        marginLeft: "5px",
+        whiteSpace: "pre-wrap",
       }}
     >
       {children}

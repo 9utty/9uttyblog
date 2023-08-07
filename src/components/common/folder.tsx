@@ -1,20 +1,37 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 
 interface Props {
   FolderName: string;
 }
 
 const Folder = ({ FolderName }: Props) => {
+  const [isHovered, setIsHovered] = useState(false);
   const route = useRouter();
 
   const onClickFolder = () => {
     route.push(`/categories/${FolderName}`);
   };
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
-    <div className="hover:scale-110">
+    <div
+      className={isHovered ? "scaled" : ""}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        transform: isHovered ? "scale(1.02)" : "",
+        transition: "transform 0.3s",
+      }}
+    >
       <button
         className="bg-transparent border-0 pt-[10px] w-20"
         onClick={onClickFolder}
