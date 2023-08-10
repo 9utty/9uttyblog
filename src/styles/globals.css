@@ -4,7 +4,14 @@
 
 html {
   font-family: "dunggeunmo-bold";
-  @apply md:text-[20px] text-[16px] lg:text-[22px];
+  @apply md:text-[20px] text-[16px] lg:text-[22px] overflow-y-scroll md:overflow-y-hidden w-[100vw];
+}
+
+body {
+  margin: 0;
+  font-family: "dunggeunmo-bold";
+  background: #008080;
+  @apply w-[100vw];
 }
 
 @font-face {
@@ -37,14 +44,6 @@ html {
 
 span {
   font-family: "dunggeunmo-bold";
-}
-
-body {
-  margin: 0;
-  font-family: "dunggeunmo-bold";
-  background: #008080;
-  height: "100vh";
-  overflow-y: hidden;
 }
 
 article ol {

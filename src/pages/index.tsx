@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getCategories } from "@/utils/posts";
 import Folder from "@/components/common/folder";
+import { Col, Row } from "antd";
 
 interface props {
   categories: string[];
@@ -21,19 +22,15 @@ export const getServerSideProps = async () => {
 
 export default function Home({ categories }: props) {
   return (
-    <div>
-      <div
-        style={{
-          padding: "20px",
-          color: "white",
-          display: "flex",
-          flexDirection: "column",
-          flexWrap: "wrap",
-        }}
-      >
-        {categories &&
-          categories.map((cate) => <Folder key={cate} FolderName={cate} />)}
+    <section id="home">
+      <div style={{ color: "white", maxHeight: "80vh" }}>
+        <Row>
+          {categories &&
+            categories.map((cate) => {
+              return <Folder key={cate} FolderName={cate} />;
+            })}
+        </Row>
       </div>
-    </div>
+    </section>
   );
 }

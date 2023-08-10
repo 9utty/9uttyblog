@@ -8,15 +8,9 @@ import {
   Toolbar,
 } from "react95";
 import Image from "next/image";
-import Link from "next/link";
-import { getCategories } from "@/utils/posts";
-import Folder from "../common/folder";
 import { useRouter } from "next/router";
-interface Props {
-  children?: React.ReactNode;
-}
 
-export default function Layout({ children }: Props) {
+export default function Layout() {
   const [open, setOpen] = useState(false);
   const route = useRouter();
   return (
@@ -26,10 +20,11 @@ export default function Layout({ children }: Props) {
           width: "100vw",
           paddingTop: "3px",
           height: "2.5rem",
-          position: "absolute",
-          bottom: "0",
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          paddingBottom: "5px",
         }}
-        className="min-h-[50px]"
       >
         <Toolbar>
           <div style={{ position: "relative", display: "inline-block" }}>
@@ -69,12 +64,12 @@ export default function Layout({ children }: Props) {
                 }}
                 onClick={() => setOpen(false)}
               >
-                <MenuListItem onClick={() => route.push("/")}>
+                {/* <MenuListItem onClick={() => route.push("/")}>
                   <span role="img" aria-label="👨">
                     {" 👨 "}
                   </span>
                   <span>My Blog?</span>
-                </MenuListItem>
+                </MenuListItem> */}
                 <MenuListItem onClick={() => route.push("/profile")}>
                   <span role="img" aria-label="👨‍💻">
                     {" 👨‍💻 "}
@@ -108,7 +103,6 @@ export default function Layout({ children }: Props) {
           {/* <Search /> */}
         </Toolbar>
       </Bar>
-      {children}
     </>
   );
 }

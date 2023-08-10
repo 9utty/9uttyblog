@@ -22,9 +22,10 @@ export default function App({
             href="https://user-images.githubusercontent.com/86397600/236520751-cbe5955c-0ec5-46d8-bc42-130ef3c62a1f.png"
           />
         </Head>
-        <Layout>
+        <div style={{ height: "100vh" }}>
           <Component {...pageProps} />
-        </Layout>
+          <Layout />
+        </div>
       </ThemeProvider>
     </>
   );
