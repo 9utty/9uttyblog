@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Button, Window, WindowContent, WindowHeader } from "react95";
 import { useRouter } from "next/router";
+import { Grid } from "antd";
+
+const { useBreakpoint } = Grid;
 
 interface Props {
   children: React.ReactNode;
@@ -26,6 +29,8 @@ const CustomModal = ({
 }: Props) => {
   const route = useRouter();
 
+  const screens = useBreakpoint();
+
   const closeModal = () => {
     route.back();
   };
@@ -47,7 +52,7 @@ const CustomModal = ({
             justifyContent: "space-between",
             display: "flex",
             padding: "10px",
-            height: "35px",
+            height: screens.md ? "50px" : "35px",
           }}
         >
           <span
@@ -59,7 +64,12 @@ const CustomModal = ({
             {`${modalName}`}
           </span>
           <Button style={{ marginTop: "2px" }} onClick={closeModal}>
-            <span style={{ fontFamily: "dunggeunmo-bold", fontSize: "24px" }}>
+            <span
+              style={{
+                fontFamily: "dunggeunmo-bold",
+                fontSize: screens.md ? "28px" : "24px",
+              }}
+            >
               X
             </span>
           </Button>

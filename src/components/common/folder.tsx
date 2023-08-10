@@ -1,6 +1,9 @@
+import { Grid } from "antd";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { memo, useState } from "react";
+
+const { useBreakpoint } = Grid;
 
 interface Props {
   FolderName: string;
@@ -9,6 +12,7 @@ interface Props {
 const Folder = ({ FolderName }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
   const route = useRouter();
+  const screens = useBreakpoint();
 
   const onClickFolder = () => {
     route.push(`/categories/${FolderName}`);
@@ -30,7 +34,7 @@ const Folder = ({ FolderName }: Props) => {
       style={{
         transform: isHovered ? "scale(1.1)" : "",
         transition: "transform 0.3s",
-        width: "100px",
+        width: screens.md ? "200px" : "150px",
       }}
     >
       <button
@@ -43,23 +47,29 @@ const Folder = ({ FolderName }: Props) => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: "100px",
+            width: screens.md ? "120px" : "100px",
             marginTop: "10px",
             marginLeft: "10px",
           }}
         >
           <div
-            style={{ width: "50px", inlineSize: "block", alignItems: "middle" }}
+            style={{
+              width: screens.md ? "80px" : "60px",
+              inlineSize: "block",
+              alignItems: "middle",
+            }}
           >
             <Image
               src="https://user-images.githubusercontent.com/86397600/236442704-86adb1a0-63f3-460a-a138-fcf18906222b.png"
               alt="folder"
-              width={70}
-              height={70}
-              className="w-14 h-9"
+              width={screens.md ? 100 : 80}
+              height={screens.md ? 100 : 80}
             />
           </div>
-          <span className="text-white pl-[8px] text-[20px] z-0">
+          <span
+            className="text-white"
+            style={{ fontSize: "1.3rem", paddingLeft: "8px" }}
+          >
             {`${FolderName}.`}
           </span>
         </div>

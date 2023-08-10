@@ -1,3 +1,4 @@
+import { Grid } from "antd";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -9,9 +10,12 @@ interface Props {
   filePath: string;
 }
 
+const { useBreakpoint } = Grid;
+
 const PostButton = (props: Props) => {
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
+  const screens = useBreakpoint();
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -46,7 +50,7 @@ const PostButton = (props: Props) => {
           display: "flex",
           backgroundColor: isHovered ? "#0027a9" : "black",
           opacity: "0.1",
-          height: "50px",
+          height: screens.md ? "80px" : "100px",
           borderRadius: "10px",
         }}
       ></span>
@@ -55,7 +59,7 @@ const PostButton = (props: Props) => {
           display: "flex",
           alignItems: "center",
           position: "relative",
-          top: "-40px",
+          top: screens.md ? "-60px" : "-80px",
         }}
       >
         <Image
