@@ -16,7 +16,7 @@ export async function getPostByName(
   fileName: string
 ): Promise<{ meta: Meta; compiledSource: MDXRemoteSerializeResult } | null> {
   const res = await fetch(
-    `https://raw.githubusercontent.com/9utty/MyBlogMetadata/main/${fileName}`,
+    `https://raw.githubusercontent.com/${process.env.NEXT_PUBLIC_GITHUB_REPO}/main/${fileName}`,
     {
       headers: {
         Accept: "application/vnd.github+json",
@@ -89,7 +89,7 @@ export async function getPostByName(
 
 export async function getPostsMeta(): Promise<Meta[] | undefined> {
   const res = await fetch(
-    "https://api.github.com/repos/9utty/MyBlogMetadata/git/trees/main?recursive=0",
+    `https://api.github.com/repos/${process.env.NEXT_PUBLIC_GITHUB_REPO}/git/trees/main?recursive=0`,
     {
       headers: {
         Accept: "application/vnd.github+json",
