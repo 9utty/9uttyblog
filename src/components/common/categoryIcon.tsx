@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   IconName: string;
@@ -8,22 +8,16 @@ interface Props {
 }
 
 const CategoryIcon = ({ IconName, filePath }: Props) => {
-  const router = useRouter();
-
-  const openModal = () => {
-    router.push(filePath);
-  };
-
   return (
     <div>
-      <button
+      <Link
         style={{
           background: "transparent",
           borderWidth: "0px",
           paddingTop: "10px",
           width: "100px",
         }}
-        onClick={openModal}
+        href={filePath}
       >
         <div
           style={{
@@ -59,7 +53,7 @@ const CategoryIcon = ({ IconName, filePath }: Props) => {
             {IconName}
           </span>
         </div>
-      </button>
+      </Link>
     </div>
   );
 };

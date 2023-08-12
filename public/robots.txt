@@ -6,4 +6,4 @@ Allow: /
 Host: https://9utty.world
 
 # Sitemaps
-Sitemap: https://9utty.world/sitemap.xml
+Sitemap: https://9utty.world/api/sitemap.xml

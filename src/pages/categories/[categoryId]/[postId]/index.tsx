@@ -11,7 +11,7 @@ import TabTag from "@/components/post/TabTag";
 import Utterances from "@/components/common/utterances";
 import TextTag from "@/components/post/TextTag";
 import Image from "next/image";
-import NotFound from "@/pages/404";
+import Head from "next/head";
 
 type Props = {
   meta: Meta;
@@ -63,6 +63,16 @@ const Post = ({ meta, compiledSource }: Props) => {
 
   return (
     <>
+      <Head>
+        <meta charSet="utf-8" />
+        <title>{`구티의 블로그: ${meta.title}`}</title>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="https://user-images.githubusercontent.com/86397600/236520751-cbe5955c-0ec5-46d8-bc42-130ef3c62a1f.png"
+        />
+      </Head>
       <CustomModal modalName={meta.title} width="80vw" height="70vh" left="10%">
         <div
           className="post"

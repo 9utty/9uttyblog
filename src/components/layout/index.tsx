@@ -8,11 +8,10 @@ import {
   Toolbar,
 } from "react95";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Layout() {
   const [open, setOpen] = useState(false);
-  const route = useRouter();
   return (
     <>
       <Bar
@@ -70,26 +69,30 @@ export default function Layout() {
                   </span>
                   <span>My Blog?</span>
                 </MenuListItem> */}
-                <MenuListItem onClick={() => route.push("/profile")}>
-                  <span role="img" aria-label="👨‍💻">
-                    {" 👨‍💻 "}
-                  </span>
-                  <span>Profile?</span>
-                </MenuListItem>
-                <MenuListItem onClick={() => route.push("/")}>
-                  <span role="img" aria-label="🏠">
-                    {" 🏠 "}
-                  </span>
-                  <span>Go Home</span>
-                </MenuListItem>
-                <MenuListItem
-                  onClick={() => route.push("https://github.com/9utty")}
-                >
-                  <span role="img" aria-label="📁">
-                    {" 📁 "}
-                  </span>
-                  <span>{" Github?"}</span>
-                </MenuListItem>
+                <Link href="/profile">
+                  <MenuListItem>
+                    <span role="img" aria-label="👨‍💻">
+                      {" 👨‍💻 "}
+                    </span>
+                    <span>Profile?</span>
+                  </MenuListItem>
+                </Link>
+                <Link href="/">
+                  <MenuListItem>
+                    <span role="img" aria-label="🏠">
+                      {" 🏠 "}
+                    </span>
+                    <span>Go Home</span>
+                  </MenuListItem>
+                </Link>
+                <Link href="https://github.com/9utty">
+                  <MenuListItem>
+                    <span role="img" aria-label="📁">
+                      {" 📁 "}
+                    </span>
+                    <span>{" Github?"}</span>
+                  </MenuListItem>
+                </Link>
                 <Separator />
                 <MenuListItem disabled>
                   <span role="img" aria-label="🔙">

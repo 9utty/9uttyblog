@@ -1,6 +1,6 @@
 import { Grid } from "antd";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import React, { memo, useState } from "react";
 
 const { useBreakpoint } = Grid;
@@ -11,12 +11,7 @@ interface Props {
 
 const Folder = ({ FolderName }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
-  const route = useRouter();
   const screens = useBreakpoint();
-
-  const onClickFolder = () => {
-    route.push(`/categories/${FolderName}`);
-  };
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -37,9 +32,9 @@ const Folder = ({ FolderName }: Props) => {
         width: screens.md ? "200px" : "150px",
       }}
     >
-      <button
+      <Link
         className="bg-transparent border-0 pt-[10px] w-20"
-        onClick={onClickFolder}
+        href={`/categories/${FolderName}`}
       >
         <div
           style={{
@@ -73,7 +68,7 @@ const Folder = ({ FolderName }: Props) => {
             {`${FolderName}.`}
           </span>
         </div>
-      </button>
+      </Link>
     </div>
   );
 };
