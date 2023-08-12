@@ -1,6 +1,7 @@
 import CustomModal from "@/components/common/customModal";
 import PostButton from "@/components/common/postButton";
 import { getPostsMeta } from "@/utils/posts";
+import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 
@@ -8,7 +9,9 @@ interface props {
   posts: Meta[];
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps<{
+  posts: Meta[] | undefined;
+}> = async () => {
   const posts = await getPostsMeta();
 
   return {
