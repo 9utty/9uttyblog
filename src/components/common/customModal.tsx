@@ -59,6 +59,10 @@ const CustomModal = ({
             style={{
               fontFamily: "dunggeunmo-bold",
               fontSize: "26px",
+              maxWidth: "10em", // 최대 길이를 10글자로 설정
+              textOverflow: "ellipsis", // 말줄임표로 넘치는 텍스트 처리
+              whiteSpace: "nowrap", // 텍스트를 한 줄로 유지
+              overflow: "hidden", // 넘치는 부분 감춤
             }}
           >
             {`${modalName}`}

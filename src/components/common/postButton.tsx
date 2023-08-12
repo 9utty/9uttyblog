@@ -50,7 +50,7 @@ const PostButton = (props: Props) => {
           display: "flex",
           backgroundColor: isHovered ? "#0027a9" : "black",
           opacity: "0.1",
-          height: screens.md ? "80px" : "100px",
+          height: screens.sm ? "60px" : "50px",
           borderRadius: "10px",
         }}
       ></span>
@@ -59,7 +59,7 @@ const PostButton = (props: Props) => {
           display: "flex",
           alignItems: "center",
           position: "relative",
-          top: screens.md ? "-60px" : "-80px",
+          top: screens.sm ? "-45px" : "-40px",
         }}
       >
         <Image
@@ -79,16 +79,29 @@ const PostButton = (props: Props) => {
             width: "100%",
           }}
         >
-          {props.Header}
-          <span
+          <p
             style={{
               fontFamily: "dunggeunmo-bold",
               fontSize: "20px",
-              top: "-50px",
+              maxWidth: screens.sm ? "18em" : "10em", // 최대 길이를 10글자로 설정
+              textOverflow: "ellipsis", // 말줄임표로 넘치는 텍스트 처리
+              whiteSpace: "nowrap", // 텍스트를 한 줄로 유지
+              overflow: "hidden", // 넘치는 부분 감춤
             }}
           >
-            {props.Date}
-          </span>
+            {props.Header}
+          </p>
+          {screens.sm ? (
+            <p
+              style={{
+                fontFamily: "dunggeunmo-bold",
+                fontSize: "20px",
+                top: "-50px",
+              }}
+            >
+              {props.Date}
+            </p>
+          ) : null}
         </span>
       </span>
     </button>
