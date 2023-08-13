@@ -60,12 +60,17 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const Post = ({ meta, compiledSource }: Props) => {
   const route = useRouter();
+  const { categoryId, postId } = route.query as {
+    categoryId: string;
+    postId: string;
+  };
 
   return (
     <>
       <Head>
         <meta charSet="utf-8" />
         <title>{`구티의 블로그: ${meta.title}`}</title>
+        <meta name="description" content={meta.title} />
         <link
           rel="icon"
           type="image/png"
@@ -73,7 +78,13 @@ const Post = ({ meta, compiledSource }: Props) => {
           href="https://user-images.githubusercontent.com/86397600/236520751-cbe5955c-0ec5-46d8-bc42-130ef3c62a1f.png"
         />
       </Head>
-      <CustomModal modalName={meta.title} width="90vw" height="70vh" left="5%">
+      <CustomModal
+        modalName={meta.title}
+        width="90vw"
+        height="70vh"
+        left="5%"
+        backPath={`/categories/${categoryId}`}
+      >
         <div
           className="post"
           style={{ width: "100%", height: "60vh", overflowY: "scroll" }}

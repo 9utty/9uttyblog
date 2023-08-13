@@ -14,6 +14,7 @@ const { useBreakpoint } = Grid;
 
 const PostButton = (props: Props) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [disabled, setDisabled] = useState(false);
   const router = useRouter();
   const screens = useBreakpoint();
 
@@ -25,6 +26,7 @@ const PostButton = (props: Props) => {
     setIsHovered(false);
   };
   const openModal = () => {
+    setDisabled(true);
     router.push(props.filePath);
   };
 
@@ -38,6 +40,7 @@ const PostButton = (props: Props) => {
         transition: "transform 0.2s",
       }}
       className={isHovered ? "scaled" : ""}
+      disabled={disabled}
       onClick={openModal}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Button, Window, WindowContent, WindowHeader } from "react95";
 import { useRouter } from "next/router";
 import { Grid } from "antd";
+import Link from "next/link";
 
 const { useBreakpoint } = Grid;
 
 interface Props {
   children: React.ReactNode;
   modalName: string;
+  backPath?: string;
   top?: string;
   left?: string;
   right?: string;
@@ -20,6 +22,7 @@ interface Props {
 const CustomModal = ({
   children,
   modalName,
+  backPath,
   top,
   left,
   right,
@@ -30,10 +33,13 @@ const CustomModal = ({
   const route = useRouter();
 
   const screens = useBreakpoint();
+  const [disabled, setDisabled] = useState(false);
 
   const closeModal = () => {
+    setDisabled(true);
     route.back();
   };
+
   return (
     <ModalWrapper>
       <Window
@@ -67,16 +73,39 @@ const CustomModal = ({
           >
             {`${modalName}`}
           </span>
-          <Button style={{ marginTop: "2px" }} onClick={closeModal}>
-            <span
-              style={{
-                fontFamily: "dunggeunmo-bold",
-                fontSize: screens.md ? "28px" : "24px",
-              }}
+          {backPath ? (
+            <Link href={backPath}>
+              <Button
+                style={{ marginTop: "2px" }}
+                disabled={disabled}
+                onClick={() => setDisabled(true)}
+              >
+                <span
+                  style={{
+                    fontFamily: "dunggeunmo-bold",
+                    fontSize: screens.md ? "28px" : "24px",
+                  }}
+                >
+                  X
+                </span>
+              </Button>
+            </Link>
+          ) : (
+            <Button
+              style={{ marginTop: "2px" }}
+              onClick={closeModal}
+              disabled={disabled}
             >
-              X
-            </span>
-          </Button>
+              <span
+                style={{
+                  fontFamily: "dunggeunmo-bold",
+                  fontSize: screens.md ? "28px" : "24px",
+                }}
+              >
+                X
+              </span>
+            </Button>
+          )}
         </WindowHeader>
         <WindowContent>{children}</WindowContent>
       </Window>

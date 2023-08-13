@@ -45,6 +45,7 @@ export default function CategoryPage({ posts }: props) {
         width={screens.sm ? "80vw" : "95vw"}
         height="70vh"
         left={screens.sm ? "10%" : "2.5%"}
+        backPath="/"
       >
         <div style={{ height: "60vh", width: "100%", overflowY: "scroll" }}>
           {filteredPosts &&
