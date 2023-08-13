@@ -1,9 +1,12 @@
 import CustomModal from "@/components/common/customModal";
 import PostButton from "@/components/common/postButton";
 import { getPostsMeta } from "@/utils/posts";
+import { Grid } from "antd";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
+
+const { useBreakpoint } = Grid;
 
 interface props {
   posts: Meta[];
@@ -23,6 +26,7 @@ export const getServerSideProps: GetServerSideProps<{
 
 export default function CategoryPage({ posts }: props) {
   const route = useRouter();
+  const screens = useBreakpoint();
   const { categoryId } = route.query;
 
   if (categoryId === undefined) return null;
@@ -38,9 +42,9 @@ export default function CategoryPage({ posts }: props) {
     <>
       <CustomModal
         modalName={categoryId as string}
-        width="80vw"
+        width={screens.sm ? "80vw" : "95vw"}
         height="70vh"
-        left="10%"
+        left={screens.sm ? "10%" : "2.5%"}
       >
         <div style={{ height: "60vh", width: "100%", overflowY: "scroll" }}>
           {filteredPosts &&

@@ -73,7 +73,7 @@ const Post = ({ meta, compiledSource }: Props) => {
           href="https://user-images.githubusercontent.com/86397600/236520751-cbe5955c-0ec5-46d8-bc42-130ef3c62a1f.png"
         />
       </Head>
-      <CustomModal modalName={meta.title} width="80vw" height="70vh" left="10%">
+      <CustomModal modalName={meta.title} width="90vw" height="70vh" left="5%">
         <div
           className="post"
           style={{ width: "100%", height: "60vh", overflowY: "scroll" }}
