@@ -23,6 +23,11 @@ export default async function handler(
       <changefreq>daily</changefreq>
       <priority>1.0</priority>
     </url>
+    <url>
+      <loc>${URL}/profile</loc>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
   `;
 
   for (const categoryId of categories) {
