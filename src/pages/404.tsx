@@ -30,7 +30,7 @@ const NotFound = () => {
           zIndex: 10,
           position: "fixed",
           top: screens.sm ? "50%" : "20%",
-          left: screens.sm ? "65%" : "30%",
+          left: screens.sm ? "65%" : "15%",
         }}
       >
         <div
@@ -53,18 +53,18 @@ const NotFound = () => {
           >
             You are all alone here
           </h1>
-          <p
+          <span
+            className="animate-bounce"
             style={{
               fontFamily: "dunggeunmo-bold",
               color: "white",
               fontSize: "3rem",
               fontWeight: "extrabold",
-              transform: "animate-bounce",
               transition: "transform 0.3s",
             }}
           >
             404
-          </p>
+          </span>
         </div>
         <Link href="/">
           <h2
