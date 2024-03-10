@@ -34,7 +34,7 @@ export default function Home({ categories }: props) {
           href="https://user-images.githubusercontent.com/86397600/236520751-cbe5955c-0ec5-46d8-bc42-130ef3c62a1f.png"
         />
       </Head>
-      <div style={{ color: "white", maxHeight: "80vh", padding: 5 }}>
+      <div style={{ color: "white", maxHeight: "80vh", padding: 5, paddingLeft: 5 }}>
         <Row>
           {categories &&
             categories.map((cate) => {
