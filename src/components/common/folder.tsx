@@ -2,6 +2,7 @@ import { Grid } from "antd";
 import Image from "next/image";
 import Link from "next/link";
 import React, { memo, useState } from "react";
+import { Box, Typography } from '@mui/material';
 
 const { useBreakpoint } = Grid;
 
@@ -22,14 +23,13 @@ const Folder = ({ FolderName }: Props) => {
   };
 
   return (
-    <div
+    <Box
       className={isHovered ? "scaled" : ""}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      style={{
-        transform: isHovered ? "scale(1.1)" : "",
+      sx={{
+        transform: isHovered ? "scale(1.03)" : "",
         transition: "transform 0.3s",
-        width: screens.md ? "200px" : "150px",
       }}
     >
       <Link
@@ -42,7 +42,7 @@ const Folder = ({ FolderName }: Props) => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            width: screens.md ? "120px" : "100px",
+            width: screens.md ? "100px" : "80px",
             marginTop: "10px",
             marginLeft: "10px",
           }}
@@ -57,19 +57,20 @@ const Folder = ({ FolderName }: Props) => {
             <Image
               src="https://user-images.githubusercontent.com/86397600/236442704-86adb1a0-63f3-460a-a138-fcf18906222b.png"
               alt="folder"
-              width={screens.md ? 100 : 80}
-              height={screens.md ? 100 : 80}
+              width={screens.md ? 80 : 60}
+              height={screens.md ? 80 : 60}
             />
           </div>
-          <span
-            className="text-white"
-            style={{ fontSize: "1.3rem", paddingLeft: "8px" }}
+          <Typography
+            sx={{ fontFamily: "dunggeunmo-bold", color: "white", paddingLeft: "8px" }}
+            variant="h6"
+            noWrap
           >
             {`${FolderName}.`}
-          </span>
+          </Typography>
         </div>
       </Link>
-    </div>
+    </Box>
   );
 };
 

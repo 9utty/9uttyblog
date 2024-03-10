@@ -36,7 +36,7 @@ const PostButton = (props: Props) => {
         width: "100%",
         height: "50px",
         position: "relative",
-        transform: isHovered ? "scale(0.98)" : "",
+        transform: isHovered ? "scale(0.995)" : "",
         transition: "transform 0.2s",
       }}
       className={isHovered ? "scaled" : ""}
@@ -63,6 +63,8 @@ const PostButton = (props: Props) => {
           alignItems: "center",
           position: "relative",
           top: screens.sm ? "-45px" : "-40px",
+          paddingLeft: '10px',
+          paddingRight: '10px',
         }}
       >
         <Image
