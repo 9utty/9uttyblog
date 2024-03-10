@@ -47,7 +47,7 @@ export default function CategoryPage({ posts }: props) {
         left={screens.sm ? "10%" : "2.5%"}
         backPath="/"
       >
-        <div style={{ height: "60vh", width: "100%", overflowY: "scroll" }}>
+        <div style={{ height: "60vh", width: "100%", overflowY: "scroll", padding: 5 }}>
           {filteredPosts &&
             filteredPosts.map((post) => {
               return (
